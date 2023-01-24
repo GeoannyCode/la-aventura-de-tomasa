@@ -34,19 +34,27 @@ func _physics_process(_delta):
 func _on_player_area_entered(area):
 	if area.is_in_group("steps_down"):
 		in_area = area
+		$"F-key".show()
 	if area.is_in_group("steps_up"):
 		in_area = area
+		$"F-key".show()
 	if area.is_in_group("door1"):
 		in_area = area
+		$"F-key".show()
 	if area.is_in_group("door_house"):
 		in_area = area
+		$"F-key".show()
 		
 func _on_player_area_exited(area):
 	if area.is_in_group("steps_down"):
 		in_area = null
+		$"F-key".hide()
 	if area.is_in_group("steps_up"):
 		in_area = null
+		$"F-key".hide()
 	if area.is_in_group("door1"):
 		in_area = null
+		$"F-key".hide()
 	if area.is_in_group("door_house"):
 		in_area = null
+		$"F-key".hide()

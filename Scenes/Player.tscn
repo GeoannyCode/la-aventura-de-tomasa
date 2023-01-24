@@ -1,8 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/SeparateAnim/Walk.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/SpriteSheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Items/f-key.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/F-key.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 9.0
@@ -109,6 +111,12 @@ animation = "down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2( 0, 1 )
 shape = SubResource( 1 )
+
+[node name="F-key" type="Sprite" parent="."]
+position = Vector2( -5.96046e-08, -17 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [connection signal="area_entered" from="player" to="." method="_on_player_area_entered"]
 [connection signal="area_exited" from="player" to="." method="_on_player_area_exited"]
