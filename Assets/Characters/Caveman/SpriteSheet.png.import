@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex"
+path="res://.import/SpriteSheet.png-777ae71782d74012dad0127959b968d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex" ]
+source_file="res://Assets/Characters/Caveman/SpriteSheet.png"
+dest_files=[ "res://.import/SpriteSheet.png-777ae71782d74012dad0127959b968d3.stex" ]
 
 [params]
 

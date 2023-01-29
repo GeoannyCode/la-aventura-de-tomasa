@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex"
+path="res://.import/DialogInfo.png-91e2fa277fe584d7d234e89bdecb797e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex" ]
+source_file="res://Assets/HUD/Dialog/DialogInfo.png"
+dest_files=[ "res://.import/DialogInfo.png-91e2fa277fe584d7d234e89bdecb797e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex"
+path="res://.import/font8x8.png-70f42fcecd8987d2db1eba414658ffbc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex" ]
+source_file="res://Assets/Player/Font/font8x8.png"
+dest_files=[ "res://.import/font8x8.png-70f42fcecd8987d2db1eba414658ffbc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

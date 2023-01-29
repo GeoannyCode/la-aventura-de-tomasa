@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex"
+path="res://.import/Arrow.png-20793c7f2922a33776d0f1882f055723.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Faceset.png"
-dest_files=[ "res://.import/Faceset.png-3eb8f59e0fc93885bdd53e5282c6d577.stex" ]
+source_file="res://Assets/HUD/Dialog/Arrow.png"
+dest_files=[ "res://.import/Arrow.png-20793c7f2922a33776d0f1882f055723.stex" ]
 
 [params]
 

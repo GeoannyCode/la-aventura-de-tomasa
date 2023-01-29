@@ -4,6 +4,7 @@ signal player_f
 export (int) var speed = 400
 var velocity = Vector2.ZERO
 var in_area = null
+var dialog = false
 
 func get_inputs():
 	velocity = Vector2()
@@ -44,6 +45,7 @@ func _on_player_area_entered(area):
 	if area.is_in_group("door_house"):
 		in_area = area
 		$"F-key".show()
+
 		
 func _on_player_area_exited(area):
 	if area.is_in_group("steps_down"):
@@ -58,3 +60,4 @@ func _on_player_area_exited(area):
 	if area.is_in_group("door_house"):
 		in_area = null
 		$"F-key".hide()
+
