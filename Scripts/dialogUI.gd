@@ -1,13 +1,15 @@
 extends CanvasLayer
 
-enum NPCS{chest, food, mom, tools, juan}
+enum NPCS{chest, food, mom, tools, juan, pedro, alex}
 
 const IMG: Dictionary = {
 	'CHEST': preload("res://Assets/Player/Faceset.png"),
 	'FOOD': preload("res://Assets/Player/Faceset.png"),
 	'MOM': preload("res://Assets/Characters/Cavegirl2/Faceset.png"),
 	'TOOLS': preload("res://Assets/Player/Faceset.png"),
-	'JUAN': preload("res://Assets/Characters/Caveman/Faceset.png")
+	'JUAN': preload("res://Assets/Characters/Caveman/Faceset.png"),
+	'PEDRO': preload("res://Assets/Characters/Caveman2/Faceset.png"),
+	'ALEX': preload("res://Assets/Characters/EggBoy/Faceset.png")
 }
 
 const TEXT_CHEST: Array =[
@@ -33,6 +35,16 @@ const TEXT_TOOLS: Array =[
 const TEXT_JUAN: Array =[
 	'JUAN: Texto de prueba linea 1',
 	'JUAN: Texto de prueba linea 2',
+]
+
+const TEXT_PEDRO: Array =[
+	'PEDRO: Texto de prueba linea 1',
+	'PEDRO: Texto de prueba linea 2',
+]
+
+const TEXT_ALEX: Array =[
+	'ALEX: Texto de prueba linea 1',
+	'ALEX: Texto de prueba linea 2',
 ]
 
 var chats: int = 0
@@ -71,11 +83,23 @@ func _on_tools_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_TOOLS[chats],NPCS.tools,IMG['TOOLS'])
 		chats += 1 
-		
 
+#JUAN DIALOG
 func _on_juan_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_JUAN[chats],NPCS.juan,IMG['JUAN'])
+		chats += 1 
+
+#PEDRO DIALOG
+func _on_Area2D_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_PEDRO[chats],NPCS.pedro,IMG['PEDRO'])
+		chats += 1 
+
+#ALEX DIALOG
+func _on_alex_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_ALEX[chats],NPCS.alex,IMG['ALEX'])
 		chats += 1 
 
 
@@ -124,6 +148,24 @@ func _on_Button_pressed():
 			else:
 				#dialogue ended
 				chats -= TEXT_JUAN.size()
+				hide()
+				get_tree().paused = false 
+		NPCS.pedro:
+			if chats < TEXT_PEDRO.size():
+				set_dialog(TEXT_PEDRO[chats],NPCS.pedro, IMG['PEDRO'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_PEDRO.size()
+				hide()
+				get_tree().paused = false 
+		NPCS.alex:
+			if chats < TEXT_ALEX.size():
+				set_dialog(TEXT_ALEX[chats],NPCS.alex, IMG['ALEX'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_ALEX.size()
 				hide()
 				get_tree().paused = false 
 
