@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-enum NPCS{chest, food, mom, tools, juan, pedro, alex, sofia}
+enum NPCS{chest, food, mom, tools, juan, pedro, alex, sofia, diego, kevin, maria, carlos }
 
 const IMG: Dictionary = {
 	'CHEST': preload("res://Assets/Player/Faceset.png"),
@@ -10,7 +10,11 @@ const IMG: Dictionary = {
 	'JUAN': preload("res://Assets/Characters/Caveman/Faceset.png"),
 	'PEDRO': preload("res://Assets/Characters/Caveman2/Faceset.png"),
 	'ALEX': preload("res://Assets/Characters/EggBoy/Faceset.png"),
-	'SOFIA': preload("res://Assets/Characters/Woman/Faceset.png")
+	'SOFIA': preload("res://Assets/Characters/Woman/Faceset.png"),
+	'DIEGO':preload("res://Assets/Characters/Boy/Faceset.png"),
+	'KEVIN':preload("res://Assets/Characters/Villager3/Faceset.png"),
+	'MARIA':preload("res://Assets/Characters/EggGirl/Faceset.png"),
+	'CARLOS':preload("res://Assets/Characters/BlueSamurai/Faceset.png")
 }
 
 const TEXT_CHEST: Array =[
@@ -51,6 +55,26 @@ const TEXT_ALEX: Array =[
 const TEXT_SOFIA: Array =[
 	'SOFIA: Texto de prueba linea 1',
 	'SOFIA: Texto de prueba linea 2',
+]
+
+const TEXT_DIEGO: Array =[
+	'DIEGO: Texto de prueba linea 1',
+	'DIEGO: Texto de prueba linea 2',
+]
+
+const TEXT_KEVIN: Array =[
+	'KEVIN: Texto de prueba linea 1',
+	'KEVIN: Texto de prueba linea 2',
+]
+
+const TEXT_MARIA: Array =[
+	'MARIA: Texto de prueba linea 1',
+	'MARIA: Texto de prueba linea 2',
+]
+
+const TEXT_CARLOS: Array =[
+	'CARLOS: Texto de prueba linea 1',
+	'CARLOS: Texto de prueba linea 2',
 ]
 
 var chats: int = 0
@@ -114,6 +138,29 @@ func _on_sofia_body_entered(body):
 		set_dialog(TEXT_SOFIA[chats],NPCS.sofia,IMG['SOFIA'])
 		chats += 1
 
+#DIEGO DIALOG
+func _on_diego_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_DIEGO[chats],NPCS.diego,IMG['DIEGO'])
+		chats += 1
+		
+#KEVIN DIALOG
+func _on_kevin_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_KEVIN[chats],NPCS.kevin,IMG['KEVIN'])
+		chats += 1
+
+#MARIA DIALOG
+func _on_maria_body_exited(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_MARIA[chats],NPCS.maria,IMG['MARIA'])
+		chats += 1
+		
+#CARLOS DIALOG
+func _on_carlos_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_CARLOS[chats],NPCS.carlos,IMG['CARLOS'])
+		chats += 1
 
 func _on_Button_pressed():
 	match npc:
@@ -189,6 +236,44 @@ func _on_Button_pressed():
 				chats -= TEXT_SOFIA.size()
 				hide()
 				get_tree().paused = false 
+		NPCS.diego:
+			if chats < TEXT_DIEGO.size():
+				set_dialog(TEXT_DIEGO[chats],NPCS.diego, IMG['DIEGO'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_DIEGO.size()
+				hide()
+				get_tree().paused = false
+		NPCS.kevin:
+			if chats < TEXT_DIEGO.size():
+				set_dialog(TEXT_KEVIN[chats],NPCS.kevin, IMG['KEVIN'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_KEVIN.size()
+				hide()
+				get_tree().paused = false
+		NPCS.maria:
+			if chats < TEXT_MARIA.size():
+				set_dialog(TEXT_MARIA[chats],NPCS.maria, IMG['MARIA'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_MARIA.size()
+				hide()
+				get_tree().paused = false
+		NPCS.carlos:
+			if chats < TEXT_CARLOS.size():
+				set_dialog(TEXT_CARLOS[chats],NPCS.carlos, IMG['CARLOS'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_CARLOS.size()
+				hide()
+				get_tree().paused = false
+
+
 
 
 
