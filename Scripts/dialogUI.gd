@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-enum NPCS{chest, food, mom, tools, juan, pedro, alex}
+enum NPCS{chest, food, mom, tools, juan, pedro, alex, sofia}
 
 const IMG: Dictionary = {
 	'CHEST': preload("res://Assets/Player/Faceset.png"),
@@ -9,7 +9,8 @@ const IMG: Dictionary = {
 	'TOOLS': preload("res://Assets/Player/Faceset.png"),
 	'JUAN': preload("res://Assets/Characters/Caveman/Faceset.png"),
 	'PEDRO': preload("res://Assets/Characters/Caveman2/Faceset.png"),
-	'ALEX': preload("res://Assets/Characters/EggBoy/Faceset.png")
+	'ALEX': preload("res://Assets/Characters/EggBoy/Faceset.png"),
+	'SOFIA': preload("res://Assets/Characters/Woman/Faceset.png")
 }
 
 const TEXT_CHEST: Array =[
@@ -45,6 +46,11 @@ const TEXT_PEDRO: Array =[
 const TEXT_ALEX: Array =[
 	'ALEX: Texto de prueba linea 1',
 	'ALEX: Texto de prueba linea 2',
+]
+
+const TEXT_SOFIA: Array =[
+	'SOFIA: Texto de prueba linea 1',
+	'SOFIA: Texto de prueba linea 2',
 ]
 
 var chats: int = 0
@@ -101,6 +107,12 @@ func _on_alex_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_ALEX[chats],NPCS.alex,IMG['ALEX'])
 		chats += 1 
+
+#SOFIA DIALOG
+func _on_sofia_body_entered(body):
+	if body.is_in_group('player'):
+		set_dialog(TEXT_SOFIA[chats],NPCS.sofia,IMG['SOFIA'])
+		chats += 1
 
 
 func _on_Button_pressed():
@@ -168,4 +180,15 @@ func _on_Button_pressed():
 				chats -= TEXT_ALEX.size()
 				hide()
 				get_tree().paused = false 
+		NPCS.sofia:
+			if chats < TEXT_SOFIA.size():
+				set_dialog(TEXT_SOFIA[chats],NPCS.alex, IMG['SOFIA'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_SOFIA.size()
+				hide()
+				get_tree().paused = false 
+
+
 
