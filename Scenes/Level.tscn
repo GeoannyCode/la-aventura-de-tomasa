@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Tilesets/TilesetInteriorFloor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/dialog_anim.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/dialogUI.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/dialogUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Objects/coinUI.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetInteriorFloor.png 0"
@@ -1887,7 +1888,7 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65532, 30, 0, -65531,
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 10 )]
 position = Vector2( 24, 109 )
 scale = Vector2( 0.5, 0.5 )
-frame = 3
+frame = 2
 
 [node name="CHEST" type="Area2D" parent="layer2" groups=["chest"]]
 scale = Vector2( 0.333333, 0.333333 )
@@ -1947,6 +1948,8 @@ icon_align = 2
 [node name="AnimationText" parent="dialogUI" index="5"]
 anims/RESET = SubResource( 19 )
 anims/button = SubResource( 20 )
+
+[node name="coinUI" parent="." instance=ExtResource( 13 )]
 
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
 [connection signal="body_entered" from="layer2/CHEST" to="dialogUI" method="_on_CHEST_body_entered"]

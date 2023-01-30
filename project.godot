@@ -14,6 +14,10 @@ config/name="La aventura de Tomasa"
 run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global_var="*res://Scripts/global_var.gd"
+
 [display]
 
 window/size/width=800

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Assets/Tilesets/TilesetInteriorFloor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scripts/dialogUI.gd" type="Script" id=13]
 [ext_resource path="res://Assets/HUD/Dialog/DialogInfo.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/dialog_anim.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Objects/coinUI.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetInteriorFloor.png 0"
@@ -2336,6 +2337,8 @@ shape = SubResource( 44 )
 [node name="dialog_anim" parent="Mom" instance=ExtResource( 15 )]
 position = Vector2( 239, 330 )
 frame = 3
+
+[node name="coinUI" parent="." instance=ExtResource( 16 )]
 
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
 [connection signal="pressed" from="dialogUI/Button" to="dialogUI" method="_on_Button_pressed"]
