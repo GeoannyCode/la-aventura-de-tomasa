@@ -18,8 +18,8 @@ const IMG: Dictionary = {
 }
 
 const TEXT_CHEST: Array =[
-	'TOMASA: Texto de prueba linea 1',
-	'TOMASA: Texto de prueba linea 2',
+	'TOMASA: Que cofre tan extraño solo se puede abrir con 3 llaves',
+	'TOMASA: Quiza mi madre sepa algo',
 ]
 
 const TEXT_FOOD: Array =[
@@ -92,8 +92,11 @@ func set_dialog(TEXT:String, NPC:int, IMG: Texture):
 #CHEST DIALOG
 func _on_CHEST_body_entered(body):
 	if body.is_in_group('player'):
-		set_dialog(TEXT_CHEST[chats],NPCS.chest,IMG['CHEST'])
-		chats += 1 
+		if global_var.counter_coins == 3:
+			OS.alert("GAME OVER")
+		else:
+			set_dialog(TEXT_CHEST[chats],NPCS.chest,IMG['CHEST'])
+			chats += 1 
 
 
 #FOOD DIALOG

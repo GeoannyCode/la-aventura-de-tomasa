@@ -29,4 +29,5 @@ animations = [ {
 [node name="dialog_anim" type="AnimatedSprite"]
 position = Vector2( 182, 133 )
 frames = SubResource( 48 )
+frame = 1
 playing = true
