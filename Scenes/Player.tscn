@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/SeparateAnim/Walk.png" type="Texture" id=2]
@@ -73,27 +73,40 @@ region = Rect2( 16, 32, 16, 16 )
 atlas = ExtResource( 2 )
 region = Rect2( 16, 48, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 96, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 80, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "down",
-"speed": 15.0
+"speed": 8.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "left",
-"speed": 15.0
+"speed": 8.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "right",
-"speed": 15.0
+"speed": 8.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "up",
-"speed": 15.0
+"speed": 8.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "winning",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -108,6 +121,8 @@ shape = SubResource( 19 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "down"
+frame = 2
+playing = true
 
 [node name="player" type="Area2D" parent="."]
 
