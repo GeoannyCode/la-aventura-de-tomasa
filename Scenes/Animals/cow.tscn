@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Animals/Cow/SpriteSheetWhiteSide.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Animals/cow.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 7, 7 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 24, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "anim_cow",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=12]
+
+[node name="npc" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+animation = "anim_cow"
+playing = true
+
+[node name="cow" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cow"]
+shape = SubResource( 12 )
