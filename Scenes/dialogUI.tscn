@@ -89,7 +89,6 @@ rect_scale = Vector2( 1.3, 1.3 )
 custom_colors/font_color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 text = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor."
 autowrap = true
-percent_visible = -0.00636943
 max_lines_visible = 0
 
 [node name="Button" type="Button" parent="."]

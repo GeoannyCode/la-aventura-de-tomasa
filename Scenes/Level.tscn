@@ -1916,7 +1916,6 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65532, 30, 0, -65531,
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 10 )]
 position = Vector2( 24, 109 )
 scale = Vector2( 0.5, 0.5 )
-frame = 0
 
 [node name="CHEST" type="Area2D" parent="layer2" groups=["chest"]]
 scale = Vector2( 0.333333, 0.333333 )
@@ -1968,9 +1967,6 @@ shape = SubResource( 8 )
 [node name="dialogUI" parent="." instance=ExtResource( 12 )]
 visible = false
 script = ExtResource( 11 )
-
-[node name="DialogText" parent="dialogUI" index="3"]
-percent_visible = 1.0
 
 [node name="Button" parent="dialogUI" index="4"]
 align = 2

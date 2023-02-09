@@ -11,26 +11,6 @@ func get_inputs():
 	velocity = Vector2()
 	if(Input.is_action_pressed("intro")):
 		emit_signal("player_f", in_area)
-#	if(Input.is_action_pressed("move_up")):
-#		velocity.y -= speed 
-#		$AnimatedSprite.play("up")
-#	if(Input.is_action_pressed("move_down")):
-#		velocity.y += speed
-#		$AnimatedSprite.play("down")
-#	if(Input.is_action_pressed("move_left")):
-#		velocity.x -= speed
-#		$AnimatedSprite.play("left")
-#	if(Input.is_action_pressed("move_right")):
-#		velocity.x += speed
-#		$AnimatedSprite.play("right")
-#	if velocity.length() > 0:
-#		velocity = velocity.normalized() * speed
-#	else:
-#		$AnimatedSprite.stop()
-	
-#func _physics_process(_delta):
-#	get_inputs()
-#	velocity = move_and_slide(velocity)	
 
 func _physics_process(delta):
 	var direction := Vector2(
@@ -62,7 +42,6 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("intro"):
 		emit_signal("player_f", in_area)
-		print("intro")
 	
 		
 func _on_player_area_entered(area):

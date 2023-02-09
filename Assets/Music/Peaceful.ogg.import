@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Peaceful.ogg-206f070b68047ff45408d5b8c88c6e75.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Peaceful.ogg"
+dest_files=[ "res://.import/Peaceful.ogg-206f070b68047ff45408d5b8c88c6e75.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

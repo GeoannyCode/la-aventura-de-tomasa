@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="La aventura de Tomasa"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/Objects/menuUI.tscn"
 config/icon="res://icon.png"
 
 [autoload]
