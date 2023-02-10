@@ -7,7 +7,4 @@ func _on_exit_pressed():
 	get_tree().quit()
 	
 func _on_CheckButton_pressed():
-	if $musicMenu.playing == true:
-		$musicMenu.playing = false
-	else:
-		$musicMenu.playing =  true
+	$musicMenu.playing = not $musicMenu.playing

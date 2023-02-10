@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Tilesets/TilesetInteriorFloor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Scenes/dialogUI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Objects/coinUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Treasure/BigTreasureChest.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/pauseMenu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Music/Clearing.ogg" type="AudioStream" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetInteriorFloor.png 0"
@@ -1916,6 +1918,7 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65532, 30, 0, -65531,
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 10 )]
 position = Vector2( 24, 109 )
 scale = Vector2( 0.5, 0.5 )
+frame = 3
 
 [node name="CHEST" type="Area2D" parent="layer2" groups=["chest"]]
 scale = Vector2( 0.333333, 0.333333 )
@@ -1977,6 +1980,15 @@ anims/RESET = SubResource( 19 )
 anims/button = SubResource( 20 )
 
 [node name="coinUI" parent="." instance=ExtResource( 13 )]
+
+[node name="pauseMenu" parent="." instance=ExtResource( 15 )]
+pause_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
 [connection signal="body_entered" from="layer2/CHEST" to="dialogUI" method="_on_CHEST_body_entered"]

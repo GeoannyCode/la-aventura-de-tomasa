@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Treasure/key.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Objects/coin.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Music/Success3.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
@@ -35,12 +36,15 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="coin" type="Area2D" parent="AnimatedSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/coin"]
 shape = SubResource( 10 )
+
+[node name="pickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="AnimatedSprite/coin" to="." method="_on_coin_body_entered"]

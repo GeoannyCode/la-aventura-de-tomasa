@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Assets/Tilesets/TilesetInteriorFloor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Assets/HUD/Dialog/DialogInfo.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/dialog_anim.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Objects/coinUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/pauseMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Music/Ascension.ogg" type="AudioStream" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetInteriorFloor.png 0"
@@ -2340,9 +2342,18 @@ frame = 3
 
 [node name="coinUI" parent="." instance=ExtResource( 16 )]
 
+[node name="pauseMenu" parent="." instance=ExtResource( 17 )]
+pause_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="pauseMenu"]
+stream = ExtResource( 18 )
+volume_db = -10.0
+autoplay = true
+
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
 [connection signal="pressed" from="dialogUI/Button" to="dialogUI" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Food" to="dialogUI" method="_on_Food_body_entered"]
 [connection signal="body_entered" from="Mom" to="dialogUI" method="_on_Mom_body_entered"]
 
 [editable path="dialogUI"]
+[editable path="pauseMenu"]
