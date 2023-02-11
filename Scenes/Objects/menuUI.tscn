@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/HUD/Font/NormalFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Player/Faceset.png" type="Texture" id=2]
@@ -27,6 +27,10 @@ outline_size = 1
 outline_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 31
+font_data = ExtResource( 1 )
+
 [node name="menuUI" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -52,9 +56,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -375.0
-margin_top = -213.0
+margin_top = -166.0
 margin_right = 394.0
-margin_bottom = -66.0
+margin_bottom = -19.0
 custom_fonts/font = SubResource( 1 )
 text = "La aventura de Tomasa "
 align = 1
@@ -65,9 +69,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -234.0
-margin_top = -290.0
-margin_right = 234.0
+margin_left = -233.0
+margin_top = -341.0
+margin_right = 235.0
+margin_bottom = -51.0
 
 [node name="start" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_right = 468.0
@@ -104,6 +109,109 @@ margin_right = 802.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 3 )
 text = "versión 1.0 "
+
+[node name="tuto" type="Node" parent="CanvasLayer"]
+
+[node name="Label3" type="Label" parent="CanvasLayer/tuto"]
+margin_left = 69.0
+margin_top = 459.0
+margin_right = 203.0
+margin_bottom = 483.0
+custom_fonts/font = SubResource( 3 )
+text = "CONTROLES: "
+
+[node name="Label4" type="Label" parent="CanvasLayer/tuto"]
+margin_left = 218.0
+margin_top = 556.0
+margin_right = 364.0
+margin_bottom = 580.0
+rect_pivot_offset = Vector2( 92, 24 )
+custom_fonts/font = SubResource( 3 )
+text = "MOVIMIENTO"
+
+[node name="Label5" type="Label" parent="CanvasLayer/tuto"]
+margin_left = 412.0
+margin_top = 556.0
+margin_right = 558.0
+margin_bottom = 580.0
+rect_pivot_offset = Vector2( 92, 24 )
+custom_fonts/font = SubResource( 3 )
+text = "ACCIÓN"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/tuto"]
+margin_left = 269.0
+margin_top = 452.0
+margin_right = 309.0
+margin_bottom = 492.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tuto/ColorRect"]
+margin_left = 8.0
+margin_top = -5.0
+margin_right = 38.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "W"
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/tuto"]
+margin_left = 269.0
+margin_top = 499.0
+margin_right = 309.0
+margin_bottom = 539.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tuto/ColorRect2"]
+margin_left = 11.0
+margin_top = -5.0
+margin_right = 41.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "S"
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/tuto"]
+margin_left = 318.0
+margin_top = 499.0
+margin_right = 358.0
+margin_bottom = 539.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tuto/ColorRect3"]
+margin_left = 10.0
+margin_top = -5.0
+margin_right = 40.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "D"
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/tuto"]
+margin_left = 220.0
+margin_top = 498.0
+margin_right = 260.0
+margin_bottom = 538.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tuto/ColorRect4"]
+margin_left = 8.0
+margin_top = -5.0
+margin_right = 38.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "A"
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/tuto"]
+margin_left = 430.0
+margin_top = 498.0
+margin_right = 470.0
+margin_bottom = 538.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tuto/ColorRect5"]
+margin_left = 8.0
+margin_top = -5.0
+margin_right = 38.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0.0509804, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "F"
 
 [node name="musicMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

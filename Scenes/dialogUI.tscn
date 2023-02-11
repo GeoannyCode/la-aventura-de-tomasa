@@ -99,6 +99,7 @@ margin_bottom = 622.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_rotation = -90.0219
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 icon = ExtResource( 4 )
 flat = true
 expand_icon = true

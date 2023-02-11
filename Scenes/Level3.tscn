@@ -8300,12 +8300,11 @@ tile_data = PoolIntArray( -3932204, 93, 0, -3932200, 93, 0, -3932193, 93, 0, -38
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 13 )]
 position = Vector2( 808.667, -21.6667 )
 scale = Vector2( 0.5, 0.5 )
-frame = 3
 
 [node name="dialog_anim2" parent="layer2" instance=ExtResource( 13 )]
 position = Vector2( 750.667, 138.667 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
+frame = 0
 
 [node name="Area2D" type="Area2D" parent="." groups=["door_house"]]
 script = ExtResource( 10 )
@@ -8365,13 +8364,16 @@ collision_layer = 2049
 collision_mask = 2049
 
 [node name="AnimatedSprite" parent="npcs/pedro/npc" index="1"]
-frame = 1
+frame = 3
 
 [node name="Area2D" parent="npcs/pedro/npc" index="2"]
 position = Vector2( 0, 0.75 )
 
 [node name="CollisionShape2D" parent="npcs/pedro/npc/Area2D" index="0"]
 position = Vector2( 0, 0.5 )
+
+[node name="dialog_anim" parent="npcs/pedro/npc" index="3"]
+frame = 1
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="npcs/pedro"]
 position = Vector2( 887, 385 )
@@ -8400,9 +8402,6 @@ collision_layer = 2049
 collision_mask = 2049
 
 [node name="AnimatedSprite" parent="npcs/alex/npc" index="1"]
-frame = 2
-
-[node name="dialog_anim" parent="npcs/alex/npc" index="3"]
 frame = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="npcs/alex"]
@@ -8430,8 +8429,11 @@ collision_layer = 2049
 collision_mask = 2049
 script = ExtResource( 19 )
 
-[node name="dialog_anim" parent="npcs/sofia/npc" index="3"]
+[node name="AnimatedSprite" parent="npcs/sofia/npc" index="1"]
 frame = 0
+
+[node name="dialog_anim" parent="npcs/sofia/npc" index="3"]
+frame = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="npcs/sofia"]
 position = Vector2( 479, 2251 )
@@ -8457,11 +8459,8 @@ shape = SubResource( 79 )
 position = Vector2( -809, -266 )
 scale = Vector2( 3, 3 )
 
-[node name="AnimatedSprite" parent="npcs/diego/npc" index="1"]
-frame = 3
-
 [node name="dialog_anim" parent="npcs/diego/npc" index="3"]
-frame = 2
+frame = 0
 
 [node name="maria" type="Node2D" parent="npcs"]
 position = Vector2( -876, 628 )
@@ -8472,11 +8471,8 @@ scale = Vector2( 3, 3 )
 collision_layer = 2049
 collision_mask = 2049
 
-[node name="AnimatedSprite" parent="npcs/maria/npc" index="1"]
-frame = 1
-
 [node name="dialog_anim" parent="npcs/maria/npc" index="3"]
-frame = 2
+frame = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="npcs/maria"]
 position = Vector2( -25, 194 )
@@ -8504,15 +8500,9 @@ scale = Vector2( 3, 3 )
 collision_layer = 2049
 collision_mask = 2049
 
-[node name="AnimatedSprite" parent="npcs/kevin/npc" index="1"]
-frame = 2
-
 [node name="kevin" parent="npcs/kevin/npc" index="2"]
 collision_layer = 2049
 collision_mask = 2049
-
-[node name="dialog_anim" parent="npcs/kevin/npc" index="3"]
-frame = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="npcs/kevin"]
 position = Vector2( -1256, -2298 )
@@ -8569,6 +8559,12 @@ scale = Vector2( 3, 3 )
 collision_layer = 2049
 collision_mask = 2049
 
+[node name="AnimatedSprite" parent="npcs/carlos/npc" index="1"]
+frame = 2
+
+[node name="dialog_anim" parent="npcs/carlos/npc" index="3"]
+frame = 0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="npcs/carlos"]
 collision_layer = 2048
 collision_mask = 2048
@@ -8605,6 +8601,7 @@ position = Vector2( 2683, 2443 )
 
 [node name="AnimatedSprite" parent="coin" index="0"]
 scale = Vector2( 3, 3 )
+frame = 3
 
 [node name="coin2" parent="." instance=ExtResource( 25 )]
 position = Vector2( -1234, 1944 )
@@ -8613,6 +8610,7 @@ script = ExtResource( 29 )
 [node name="AnimatedSprite" parent="coin2" index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 5 )
+frame = 3
 
 [node name="coin3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 152, -1928 )
@@ -8621,6 +8619,7 @@ script = ExtResource( 30 )
 [node name="AnimatedSprite" parent="coin3" index="0"]
 scale = Vector2( 3, 3 )
 frames = SubResource( 5 )
+frame = 3
 
 [node name="coinUI" parent="." instance=ExtResource( 27 )]
 
