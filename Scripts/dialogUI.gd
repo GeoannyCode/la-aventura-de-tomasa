@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-enum NPCS{chest, food, mom, tools, juan, pedro, alex, sofia, diego, kevin, maria, carlos }
+enum NPCS{chest, chest2, food, mom, tools, juan, pedro, alex, sofia, diego, kevin, maria, carlos }
 
 const IMG: Dictionary = {
 	'CHEST': preload("res://Assets/Player/Faceset.png"),
+	'CHEST2': preload("res://Assets/Player/Faceset.png"),
 	'FOOD': preload("res://Assets/Player/Faceset.png"),
 	'MOM': preload("res://Assets/Characters/Cavegirl2/Faceset.png"),
 	'TOOLS': preload("res://Assets/Player/Faceset.png"),
@@ -20,6 +21,11 @@ const IMG: Dictionary = {
 const TEXT_CHEST: Array =[
 	'TOMASA: Que cofre tan extraño solo se puede abrir con 3 llaves',
 	'TOMASA: Quiza mi madre sepa algo',
+]
+
+const TEXT_CHEST2: Array = [
+	'TOMASA: Al fin tengo las 3 llaves, podré abrir el cofre que me dejó mi abuelo.',
+	'TOMASA: Abriendo...',
 ]
 
 const TEXT_FOOD: Array =[
@@ -93,7 +99,8 @@ func set_dialog(TEXT:String, NPC:int, IMG: Texture):
 func _on_CHEST_body_entered(body):
 	if body.is_in_group('player'):
 		if global_var.counter_coins == 3:
-			OS.alert("GAME OVER")
+			set_dialog(TEXT_CHEST2[chats],NPCS.chest2, IMG['CHEST2'] )
+			chats +=1
 		else:
 			set_dialog(TEXT_CHEST[chats],NPCS.chest,IMG['CHEST'])
 			chats += 1 
@@ -176,6 +183,16 @@ func _on_Button_pressed():
 				chats -= TEXT_CHEST.size()
 				hide()
 				get_tree().paused = false
+		NPCS.chest2:
+			if chats < TEXT_CHEST2.size():
+				set_dialog(TEXT_CHEST2[chats],NPCS.chest2, IMG['CHEST2'])
+				chats += 1
+			else:
+				#dialogue ended
+				chats -= TEXT_CHEST.size()
+				hide()
+				get_tree().paused = false
+				get_tree().change_scene("res://Scenes/winnerUI.tscn")
 		NPCS.food:
 			if chats < TEXT_FOOD.size():
 				set_dialog(TEXT_FOOD[chats],NPCS.food, IMG['FOOD'])

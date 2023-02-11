@@ -8,3 +8,4 @@ func _on_exit_pressed():
 	
 func _on_CheckButton_pressed():
 	$musicMenu.playing = not $musicMenu.playing
+	
