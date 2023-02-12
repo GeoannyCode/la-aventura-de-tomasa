@@ -2255,12 +2255,8 @@ format = 1
 tile_data = PoolIntArray( -131071, 25, 0, -131070, 53, 0, -131069, 25, 0, -131068, 54, 0, -65531, 23, 0, -65529, 12, 0, 0, 20, 0, 3, 46, 0, 65536, 21, 0, 65543, 10, 0 )
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
-position = Vector2( 275, 68 )
+position = Vector2( 267, 70 )
 scale = Vector2( 3, 3 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 39, -40.3333 )
-current = true
 
 [node name="layer2" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
@@ -2328,7 +2324,6 @@ rotation = 1.57
 shape = SubResource( 41 )
 
 [node name="dialog_anim2" parent="Food" instance=ExtResource( 15 )]
-frame = 3
 
 [node name="Mom" type="Area2D" parent="." groups=["mom"]]
 
@@ -2338,7 +2333,6 @@ shape = SubResource( 44 )
 
 [node name="dialog_anim" parent="Mom" instance=ExtResource( 15 )]
 position = Vector2( 239, 330 )
-frame = 3
 
 [node name="coinUI" parent="." instance=ExtResource( 16 )]
 
@@ -2355,5 +2349,6 @@ autoplay = true
 [connection signal="body_entered" from="Food" to="dialogUI" method="_on_Food_body_entered"]
 [connection signal="body_entered" from="Mom" to="dialogUI" method="_on_Mom_body_entered"]
 
+[editable path="Player"]
 [editable path="dialogUI"]
 [editable path="pauseMenu"]

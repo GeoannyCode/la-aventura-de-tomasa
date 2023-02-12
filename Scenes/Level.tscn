@@ -1903,9 +1903,6 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65536, 6, 0, -65534, 
 position = Vector2( 186, 196 )
 scale = Vector2( 3, 3 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-
 [node name="layer2" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
 tile_set = SubResource( 2 )
@@ -1918,7 +1915,7 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65532, 30, 0, -65531,
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 10 )]
 position = Vector2( 24, 109 )
 scale = Vector2( 0.5, 0.5 )
-frame = 0
+frame = 2
 
 [node name="CHEST" type="Area2D" parent="layer2" groups=["chest"]]
 scale = Vector2( 0.333333, 0.333333 )
