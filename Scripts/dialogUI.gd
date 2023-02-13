@@ -38,11 +38,11 @@ const TEXT_FOOD: Array =[
 const TEXT_MOM: Array =[
 	'Carmelina: ¿El cofre?, si es un regalo que te dejó tu abuelo Salomón...',
 	'Carmelina: Verás tu abuelo nació en Carpue-la Valle del Chota...',
-	'Carmelina: Y es parte del grupo delos cofrades...',
+	'Carmelina: Y es parte del grupo de los cofrades...',
 	'Carmelina: Ellos se encargan de organizar la festividad de la Semana Santa...',
 	'Carmelina: También es buen músico de la bomba...',
 	'Carmelina: Me dijo que las llaves las tienen vecinos de la comunidad...',
-	'Carmelina: Puedes ir a preguntarles,  pero no te elejes mucho del pueblo.',
+	'Carmelina: Puedes ir a preguntarles,  pero no te alejes mucho del pueblo.',
 ]
 
 const TEXT_TOOLS: Array =[
@@ -218,10 +218,13 @@ func _on_kevin_body_entered(body):
 		chats += 1
 
 #MARIA DIALOG
-func _on_maria_body_exited(body):
+	
+func _on_maria_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_MARIA[chats],NPCS.maria,IMG['MARIA'])
 		chats += 1
+
+
 		
 #CARLOS DIALOG
 func _on_carlos_body_entered(body):
@@ -353,6 +356,8 @@ func _on_Button_pressed():
 				chats -= TEXT_CARLOS.size()
 				hide()
 				get_tree().paused = false
+
+
 
 
 
