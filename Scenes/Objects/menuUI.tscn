@@ -134,7 +134,7 @@ margin_left = 412.0
 margin_top = 556.0
 margin_right = 558.0
 margin_bottom = 580.0
-rect_pivot_offset = Vector2( 92, 24 )
+rect_pivot_offset = Vector2( -343, -73 )
 custom_fonts/font = SubResource( 3 )
 text = "ACCIÓN"
 

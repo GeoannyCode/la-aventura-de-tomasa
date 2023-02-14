@@ -142,6 +142,7 @@ const TEXT_CARLOS: Array =[
 
 var chats: int = 0
 var npc: int = 0
+var isNpc = false
 
 func set_dialog(TEXT:String, NPC:int, IMG: Texture):
 	show()
@@ -158,64 +159,75 @@ func _on_CHEST_body_entered(body):
 		if global_var.counter_coins == 3:
 			set_dialog(TEXT_CHEST2[chats],NPCS.chest2, IMG['CHEST2'] )
 			chats +=1
+			isNpc = true
 		else:
 			set_dialog(TEXT_CHEST[chats],NPCS.chest,IMG['CHEST'])
-			chats += 1 
+			chats += 1
+			isNpc = true
 
 
 #FOOD DIALOG
 func _on_Food_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_FOOD[chats],NPCS.food,IMG['FOOD'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #MOM DIALOG
 func _on_Mom_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_MOM[chats],NPCS.mom,IMG['MOM'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #TOOLS DIALOG
 func _on_tools_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_TOOLS[chats],NPCS.tools,IMG['TOOLS'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #JUAN DIALOG
 func _on_juan_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_JUAN[chats],NPCS.juan,IMG['JUAN'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #PEDRO DIALOG
 func _on_Area2D_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_PEDRO[chats],NPCS.pedro,IMG['PEDRO'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #ALEX DIALOG
 func _on_alex_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_ALEX[chats],NPCS.alex,IMG['ALEX'])
-		chats += 1 
+		chats += 1
+		isNpc = true
 
 #SOFIA DIALOG
 func _on_sofia_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_SOFIA[chats],NPCS.sofia,IMG['SOFIA'])
 		chats += 1
+		isNpc = true
 
 #DIEGO DIALOG
 func _on_diego_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_DIEGO[chats],NPCS.diego,IMG['DIEGO'])
 		chats += 1
+		isNpc = true
 		
 #KEVIN DIALOG
 func _on_kevin_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_KEVIN[chats],NPCS.kevin,IMG['KEVIN'])
 		chats += 1
+		isNpc = true
 
 #MARIA DIALOG
 	
@@ -223,18 +235,31 @@ func _on_maria_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_MARIA[chats],NPCS.maria,IMG['MARIA'])
 		chats += 1
-
-
+		isNpc = true
+		
 		
 #CARLOS DIALOG
 func _on_carlos_body_entered(body):
 	if body.is_in_group('player'):
 		set_dialog(TEXT_CARLOS[chats],NPCS.carlos,IMG['CARLOS'])
 		chats += 1
+		isNpc = true
 
-#func _input(event: InputEvent) -> void:
-#	if Input.is_action_pressed("continue"):
-#		_on_Button_pressed()
+					
+#func _on_player_area_entered(area):
+#	if area.is_in_group('npc'):
+#		isNpc = true
+
+
+func _on_player_area_exited(area):
+#	if area.is_in_group('npc'):
+		isNpc = false
+
+		
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("continue") and isNpc:
+		_on_Button_pressed()
+		
 
 func _on_Button_pressed():
 	match npc:
@@ -356,6 +381,14 @@ func _on_Button_pressed():
 				chats -= TEXT_CARLOS.size()
 				hide()
 				get_tree().paused = false
+
+
+
+
+
+
+
+
 
 
 

@@ -1903,6 +1903,9 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65536, 6, 0, -65534, 
 position = Vector2( 186, 196 )
 scale = Vector2( 3, 3 )
 
+[node name="AnimatedSprite" parent="Player" index="1"]
+frame = 0
+
 [node name="layer2" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
 tile_set = SubResource( 2 )
@@ -1915,9 +1918,8 @@ tile_data = PoolIntArray( -131068, 29, 0, -131066, 21, 0, -65532, 30, 0, -65531,
 [node name="dialog_anim" parent="layer2" instance=ExtResource( 10 )]
 position = Vector2( 24, 109 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
 
-[node name="CHEST" type="Area2D" parent="layer2" groups=["chest"]]
+[node name="CHEST" type="Area2D" parent="layer2" groups=["chest", "npc"]]
 scale = Vector2( 0.333333, 0.333333 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer2/CHEST"]
@@ -1988,7 +1990,11 @@ volume_db = -10.0
 autoplay = true
 
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
+[connection signal="area_entered" from="Player/player" to="dialogUI" method="_on_player_area_entered"]
+[connection signal="area_exited" from="Player/player" to="dialogUI" method="_on_player_area_exited"]
+[connection signal="body_entered" from="Player/player" to="dialogUI" method="_on_player_body_entered"]
 [connection signal="body_entered" from="layer2/CHEST" to="dialogUI" method="_on_CHEST_body_entered"]
 [connection signal="pressed" from="dialogUI/Button" to="dialogUI" method="_on_Button_pressed"]
 
+[editable path="Player"]
 [editable path="dialogUI"]

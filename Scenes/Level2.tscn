@@ -2258,6 +2258,9 @@ tile_data = PoolIntArray( -131071, 25, 0, -131070, 53, 0, -131069, 25, 0, -13106
 position = Vector2( 267, 70 )
 scale = Vector2( 3, 3 )
 
+[node name="AnimatedSprite" parent="Player" index="1"]
+frame = 2
+
 [node name="layer2" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
 tile_set = SubResource( 2 )
@@ -2316,7 +2319,7 @@ shape = SubResource( 13 )
 visible = false
 script = ExtResource( 13 )
 
-[node name="Food" type="Area2D" parent="." groups=["food"]]
+[node name="Food" type="Area2D" parent="." groups=["food", "npc"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Food"]
 position = Vector2( 226, 358 )
@@ -2325,7 +2328,7 @@ shape = SubResource( 41 )
 
 [node name="dialog_anim2" parent="Food" instance=ExtResource( 15 )]
 
-[node name="Mom" type="Area2D" parent="." groups=["mom"]]
+[node name="Mom" type="Area2D" parent="." groups=["mom", "npc"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mom"]
 position = Vector2( 166, 172 )
@@ -2345,6 +2348,8 @@ volume_db = -10.0
 autoplay = true
 
 [connection signal="player_f" from="Player" to="." method="_on_Player_player_f"]
+[connection signal="area_entered" from="Player/player" to="dialogUI" method="_on_player_area_entered"]
+[connection signal="area_exited" from="Player/player" to="dialogUI" method="_on_player_area_exited"]
 [connection signal="pressed" from="dialogUI/Button" to="dialogUI" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Food" to="dialogUI" method="_on_Food_body_entered"]
 [connection signal="body_entered" from="Mom" to="dialogUI" method="_on_Mom_body_entered"]
